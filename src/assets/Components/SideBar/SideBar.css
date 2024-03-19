@@ -1,0 +1,19 @@
+.sideBar {
+  display: flex;
+  flex-direction: column;
+
+  height: 400px;
+  border: solid;
+  width: 100px;
+  background-color: rgb(43, 86, 226);
+}
+.Home {
+  background-color: aqua;
+  border-radius: 8px;
+  text-align: center;
+}
+.About {
+  text-align: center;
+  background-color: rgb(236, 102, 12);
+  border-radius: 8px;
+}

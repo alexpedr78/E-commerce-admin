@@ -1,0 +1,11 @@
+.logo {
+  width: 100px;
+  aspect-ratio: 1;
+}
+.NavBar {
+  display: flex;
+  justify-content: space-around;
+  border: solid 1rem black;
+  background-color: rgb(0, 47, 255);
+  border-radius: 8px;
+}
