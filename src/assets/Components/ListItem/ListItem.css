@@ -1,0 +1,22 @@
+.product {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+}
+h1 {
+  text-align: center;
+}
+.info {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  gap: 1rem;
+}
+.category {
+  width: 20%;
+  background-color: blue;
+}
+.deleteButton {
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
