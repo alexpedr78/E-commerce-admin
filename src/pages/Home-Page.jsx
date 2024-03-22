@@ -1,8 +1,15 @@
-
-function HomePage() {
+import List from "../assets/Components/List/List";
+import Form from "../assets/Components/Form/Form-create";
+function HomePage(props) {
+  console.log(props);
   return (
-    <div>Home Page</div>
-  )
+    <div>
+      <div>
+        <Form setProduct={props.setProduct} />
+      </div>
+      <List handleDelete={props.handleDelete} product={props.product} />
+    </div>
+  );
 }
 
-export default HomePage
+export default HomePage;

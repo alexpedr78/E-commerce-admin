@@ -6,9 +6,8 @@ function SideBar() {
   return (
     <div className="sideBar">
       <p className="Home">
-        <a href="/">Home</a>
+        <Link to="/">Home</Link>
       </p>
-
       <p>
         <Link to="/AboutUs" className="About">
           About US

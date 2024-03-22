@@ -4,9 +4,10 @@ import "./ListItem.css";
 function List(props) {
   // console.log(props.product.id);
   return (
-   
-      <article className="product">
-       <Link to={`/ItemsDetails`}><h1>{props.product.title}</h1> </Link>
+    <article className="product">
+      <Link to={`/ItemsDetails/${props.product.id}`}>
+        <h1>{props.product.title}</h1>{" "}
+      </Link>
       <p className="category">{props.product.category}</p>
       <div className="info">
         <p>{props.product.description}</p>
@@ -23,11 +24,10 @@ function List(props) {
       <button
         className="deleteButton"
         onClick={() => props.handleDelete(props.product.id)}
-        >
+      >
         Delete
       </button>
     </article>
-       
   );
 }
 

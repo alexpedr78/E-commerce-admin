@@ -1,8 +1,8 @@
 import React from "react";
 import ListItem from "./../ListItem/ListItem";
 
-
 function List(props) {
+  console.log(props);
   return (
     <div>
       {props.product.map((product) => {

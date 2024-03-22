@@ -1,21 +1,21 @@
 // import React from 'react'
 // import { Link } from 'react-router-dom'
 
-function AboutPage () {
+function AboutPage() {
   return (
     <div>
-        <h1>About Us</h1>
-        <div>
-            <h3>
-                //////// Yo Alex we will work on this later /////////////
-                Yoooo its ur Boys Chris and Alex we outhere just 
-                to sell u guys theses fucking old shoes you know!? 
-                we will give more info later on! stay tunned...
-            </h3>
-        </div>
-        
-        </div>
-  )
+      <h1>About Us</h1>
+      <div>
+        <h3>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
+          deleniti atque, vel sapiente at magni dolorum quae, similique minus,
+          aspernatur quam. Incidunt sint quam consectetur veritatis laborum.
+          Molestias, magnam repellendus.
+        </h3>
+        <a href="https://github.com/alexpedr78/E-commerce-admin.git">github</a>
+      </div>
+    </div>
+  );
 }
 
-export default AboutPage
+export default AboutPage;
