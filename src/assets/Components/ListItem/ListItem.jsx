@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import "./ListItem.css";
+
 function List(props) {
-  console.log(props.product.id);
+  // console.log(props.product.id);
   return (
-    <article className="product">
-      <h1>{props.product.title}</h1>
+   
+      <article className="product">
+       <Link to={`/ItemsDetails`}><h1>{props.product.title}</h1> </Link>
       <p className="category">{props.product.category}</p>
       <div className="info">
         <p>{props.product.description}</p>
@@ -20,10 +23,11 @@ function List(props) {
       <button
         className="deleteButton"
         onClick={() => props.handleDelete(props.product.id)}
-      >
+        >
         Delete
       </button>
     </article>
+       
   );
 }
 

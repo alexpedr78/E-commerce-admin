@@ -6,13 +6,18 @@ import "./App.css";
 import { useState } from "react";
 import List from "./assets/Components/List/List";
 import ListItem from "./assets/Components/ListItem/ListItem";
+import { Routes, Route } from "react-router-dom";
+import AboutPage from "./pages/About-Page";
+import ItemsDetails from "./pages/Item-Details-Page";
+import HomePage from "./pages/Home-Page";
+import NotFound from "./pages/Not-Found-Page";
 
 function App() {
   const [product, setProduct] = useState(Data);
 
   function handleDelete(id) {
     const filterArray = product.filter((oneProduct) => {
-      console.log(id, oneProduct.id);
+      // console.log(id, oneProduct.id);
       return oneProduct.id !== id;
     });
     setProduct(filterArray);
@@ -41,6 +46,14 @@ function App() {
         </div>
         <Footer />
       </div>
+      /////////////////yo Alex from here are the changes im gonna make ok!!/////
+      <ItemsDetails/>
+      <Routes>
+        <Route path="/AboutUs" element={<AboutPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/NotFound" element={<NotFound />} />
+        <Route path="/ItemsDetails" element={<ItemsDetails />} />
+      </Routes>
     </div>
   );
 }
