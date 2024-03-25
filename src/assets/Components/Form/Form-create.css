@@ -3,10 +3,11 @@
   background: rgb(2, 0, 36);
   background: radial-gradient(
     circle,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(29, 119, 200, 1) 10%,
-    rgba(0, 212, 255, 1) 100%
+    rgba(2, 0, 36, 0.493) 0%,
+    rgba(29, 120, 200, 0.4) 10%,
+    rgba(0, 213, 255, 0.53) 100%
   );
+
   align-items: center;
   display: flex;
   flex-direction: column;

@@ -35,11 +35,11 @@ function App() {
 
   return (
     <div className="main">
-      <div>
+      <div className="fullBody"> 
         <Navbar />
         <div className="centralPartOfTheScreen">
           <SideBar />
-          <div>
+          <div className="bodyContainer">
             <Routes>
               <Route path="/AboutUs" element={<AboutPage />} />
               <Route

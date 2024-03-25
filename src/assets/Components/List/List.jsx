@@ -4,7 +4,7 @@ import ListItem from "./../ListItem/ListItem";
 function List(props) {
   console.log(props);
   return (
-    <div>
+    <div className="listContainer">
       {props.product.map((product) => {
         if (product.price > 500) {
           return (
