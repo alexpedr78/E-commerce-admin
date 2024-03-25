@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useState } from "react";
+import { useEffect } from "react";
 import Navbar from "./assets/Components/NavBar/Navbar";
 import Footer from "./assets/Components/Footer/Footer";
 import SideBar from "./assets/Components/SideBar/SideBar";
@@ -10,6 +11,7 @@ import HomePage from "./pages/Home-Page/Home-Page";
 import NotFound from "./pages/Not-Found-Page/Not-Found-Page";
 import ItemDetailsPage from "./pages/Item-Details-Page/Item-Details-Page";
 import EditPage from "./pages/Edit-Page/EditPage";
+
 function App() {
   const [product, setProduct] = useState(Data);
 
@@ -20,11 +22,16 @@ function App() {
     setProduct(filterArray);
   }
   function handleEdit(editedProduct) {
+    console.log(editedProduct);
     const index = product.findIndex((item) => item.id === editedProduct.id);
     const updatedProducts = [...product];
     updatedProducts[index] = editedProduct;
     setProduct(updatedProducts);
   }
+  // useEffect(() => {
+  //   handleEdit(e);
+  //   handleDelete(e);
+  // }, []);
 
   return (
     <div className="main">

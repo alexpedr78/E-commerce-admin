@@ -1,41 +1,72 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
 function EditPage(props) {
-  const [title, setTitle] = useState("");
   const { id } = useParams();
-  const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
-  const [stocks, setStocks] = useState(0);
+  const existingProduct = props.product.find(
+    (product) => product.id === Number(id)
+  );
+  console.log(props.product);
+  const [title, setTitle] = useState(existingProduct.title);
+  const [description, setDescription] = useState(existingProduct.description);
+  const [price, setPrice] = useState(existingProduct.price);
+  const [stocks, setStocks] = useState(existingProduct.stock);
+  const [done, setDone] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
+
     const editedProduct = {
-      id: id,
+      id: Number(id),
       title: title,
       description: description,
       price: price,
       stocks: stocks,
     };
     props.handleEdit(editedProduct);
+    setDone(true);
+  }
+
+  if (done) {
+    return <Navigate to={"/"} />;
   }
 
   function handleTitle(event) {
-    setTitle(event.target.value);
+    const value = event.target.value.trim();
+    if (!value) {
+      setTitle(existingProduct.title);
+    } else {
+      setTitle(event.target.value);
+    }
   }
 
   function handleDescription(event) {
-    setDescription(event.target.value);
+    const value = event.target.value.trim();
+    if (!value) {
+      setDescription(existingProduct.description);
+    } else {
+      setDescription(event.target.value);
+    }
   }
 
   function handlePrice(event) {
-    setPrice(event.target.value);
+    const value = event.target.value.trim();
+    if (!value) {
+      setPrice(existingProduct.price);
+    } else {
+      setPrice(event.target.value);
+    }
   }
 
   function handleStocks(event) {
-    setStocks(event.target.value);
+    const value = event.target.value.trim();
+    if (!value) {
+      setStocks(existingProduct.stocks);
+    } else {
+      setStocks(event.target.value);
+    }
   }
-  console.log(id, title, price);
+
   return (
     <div>
       <h1>EditPage</h1>
