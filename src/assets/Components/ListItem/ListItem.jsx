@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./ListItem.css";
+import EditPage from "../../../pages/Edit-Page/EditPage";
 
 function List(props) {
   // console.log(props.product.id);
@@ -7,8 +8,9 @@ function List(props) {
     <article className="product">
       <Link to={`/ItemsDetails/${props.product.id}`}>
         <h1>{props.product.title}</h1>{" "}
+        <p className="category">{props.product.category}</p>
       </Link>
-      <p className="category">{props.product.category}</p>
+
       <div className="info">
         <p>{props.product.description}</p>
 
@@ -27,6 +29,10 @@ function List(props) {
       >
         Delete
       </button>
+
+      <Link to={`/Edit/${props.product.id}`}>
+        <button>Edit</button>
+      </Link>
     </article>
   );
 }

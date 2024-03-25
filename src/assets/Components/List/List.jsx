@@ -9,6 +9,7 @@ function List(props) {
         if (product.price > 500) {
           return (
             <ListItem
+              handleEdit={props.handleEdit}
               handleDelete={props.handleDelete}
               key={product.id}
               product={product}

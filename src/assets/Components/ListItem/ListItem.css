@@ -3,6 +3,9 @@
   display: flex;
   flex-direction: column;
 }
+p {
+  text-align: center;
+}
 h1 {
   text-align: center;
 }
@@ -13,6 +16,8 @@ h1 {
   gap: 1rem;
 }
 .category {
+  color: aliceblue;
+  text-align: center;
   width: 20%;
   background-color: blue;
 }

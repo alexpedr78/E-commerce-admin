@@ -16,3 +16,10 @@
   background-color: rgb(236, 102, 12);
   border-radius: 8px;
 }
+.linkSide {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: sticky;
+  top: 15rem;
+}

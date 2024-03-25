@@ -1,0 +1,26 @@
+.logo {
+  width: 80px;
+  aspect-ratio: 1;
+}
+.NavBar {
+  /* position: sticky;
+  top: 1px; */
+  color: beige;
+  display: flex;
+  height: 10rem;
+  justify-content: space-around;
+  border: solid 1rem black;
+  border-style: groove;
+  text-align: center;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(29, 200, 195, 1) 19%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  border-radius: 8px;
+  & h1 {
+    align-self: center;
+  }
+}

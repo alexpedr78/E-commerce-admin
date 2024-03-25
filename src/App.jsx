@@ -1,20 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import Navbar from "./assets/Components/NavBar/Footer/NavBar/Navbar";
-
+import "./App.css";
+import { useState } from "react";
+import Navbar from "./assets/Components/NavBar/Navbar";
 import Footer from "./assets/Components/Footer/Footer";
 import SideBar from "./assets/Components/SideBar/SideBar";
 import Data from "./../public/data.json";
-import "./App.css";
-import { useState } from "react";
-import List from "./assets/Components/List/List";
-import ListItem from "./assets/Components/ListItem/ListItem";
-
-import AboutPage from "./pages/About-Page";
-import ItemsDetails from "./pages/Item-Details-Page";
-import HomePage from "./pages/Home-Page";
-import NotFound from "./pages/Not-Found-Page";
-import ItemDetailsPage from "./pages/Item-Details-Page";
-
+import AboutPage from "./pages/About-Page/About-Page";
+import HomePage from "./pages/Home-Page/Home-Page";
+import NotFound from "./pages/Not-Found-Page/Not-Found-Page";
+import ItemDetailsPage from "./pages/Item-Details-Page/Item-Details-Page";
+import EditPage from "./pages/Edit-Page/EditPage";
 function App() {
   const [product, setProduct] = useState(Data);
 
@@ -23,6 +18,12 @@ function App() {
       return oneProduct.id !== id;
     });
     setProduct(filterArray);
+  }
+  function handleEdit(editedProduct) {
+    const index = product.findIndex((item) => item.id === editedProduct.id);
+    const updatedProducts = [...product];
+    updatedProducts[index] = editedProduct;
+    setProduct(updatedProducts);
   }
 
   return (
@@ -38,11 +39,16 @@ function App() {
                 path="/"
                 element={
                   <HomePage
+                    handleEdit={handleEdit}
                     handleDelete={handleDelete}
                     setProduct={setProduct}
                     product={product}
                   />
                 }
+              />
+              <Route
+                path={`/Edit/:id`}
+                element={<EditPage handleEdit={handleEdit} product={product} />}
               />
               <Route path="*" element={<NotFound />} />
               <Route
@@ -59,16 +65,3 @@ function App() {
 }
 
 export default App;
-{
-  /* {product.map((product) => {
-              if (product.price > 500) {
-                return (
-                  <ListItem
-                    handleDelete={handleDelete}
-                    key={product.id}
-                    product={product}
-                  />
-                );
-              }
-            })} */
-}

@@ -1,41 +1,45 @@
-import React from "react";
-import "./Form-create.css";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
-function Form(props) {
+function EditPage(props) {
   const [title, setTitle] = useState("");
+  const { id } = useParams();
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState(0);
   const [stocks, setStocks] = useState(0);
-  const [id, setId] = useState("");
-
-  const handleId = (e) => setId(e.currentTarget.value);
-  const handleTitle = (e) => setTitle(e.currentTarget.value);
-  const handleDescription = (e) => setDescription(e.currentTarget.value);
-  const handlePrice = (e) => setPrice(e.currentTarget.value);
-  const handleStocks = (e) => setStocks(e.currentTarget.value);
-  console.log(stocks);
 
   function handleSubmit(event) {
     event.preventDefault();
-    const newProduct = {
-      id,
-      title,
-      description,
-      price,
-      stocks,
+    const editedProduct = {
+      id: id,
+      title: title,
+      description: description,
+      price: price,
+      stocks: stocks,
     };
-    props.setProduct((products) => [...products, newProduct]);
+    props.handleEdit(editedProduct);
   }
 
-  return (
-    <div className="formContainer">
-      <form onSubmit={handleSubmit} className="formAdd">
-        <div className="input">
-          <label htmlFor="id">id</label>
-          <input id="id" value={id} type="text" onChange={handleId} />
-        </div>
+  function handleTitle(event) {
+    setTitle(event.target.value);
+  }
 
+  function handleDescription(event) {
+    setDescription(event.target.value);
+  }
+
+  function handlePrice(event) {
+    setPrice(event.target.value);
+  }
+
+  function handleStocks(event) {
+    setStocks(event.target.value);
+  }
+  console.log(id, title, price);
+  return (
+    <div>
+      <h1>EditPage</h1>
+      <form onSubmit={handleSubmit} className="formAdd">
         <div className="input">
           <label htmlFor="title">title</label>
           <input id="title" value={title} type="text" onChange={handleTitle} />
@@ -70,11 +74,10 @@ function Form(props) {
             onChange={handleStocks}
           />
         </div>
-
-        <button>create product</button>
+        <button>Submit Edit</button>
       </form>
     </div>
   );
 }
 
-export default Form;
+export default EditPage;
