@@ -2,13 +2,21 @@
   position: sticky;
   top: 0;
 }
-.bodyContainer{
+.bodyContainer {
   width: -webkit-fill-available;
   background-color: rgb(145 215 192 / 68%);
 }
-.fullBody{
+.fullBody {
   background-image: url(https://img.freepik.com/free-photo/crop-woman-with-shopping-bags_23-2147669878.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1700265600&semt=ais);
   background-size: contain;
   background-position: center;
   background-attachment: fixed;
+}
+#hidden {
+  visibility: hidden;
+}
+.search {
+  margin: auto 0;
+}
+.inputSearch {
 }

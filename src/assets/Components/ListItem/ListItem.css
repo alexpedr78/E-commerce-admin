@@ -2,7 +2,10 @@
   border: solid 1px black;
   display: flex;
   flex-direction: column;
+  border-radius: 0.75em;
+  cursor: pointer;
 }
+
 p {
   text-align: center;
 }
@@ -22,6 +25,12 @@ h1 {
   background-color: blue;
 }
 .deleteButton {
-  border-radius: 4px;
+  width: 70%;
+  background-color: blueviolet;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.editButton {
+  border-radius: 8px;
   margin-bottom: 10px;
 }

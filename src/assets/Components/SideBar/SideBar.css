@@ -1,7 +1,7 @@
 .sideBar {
   display: flex;
   flex-direction: column;
-
+  border-radius: 6px;
   border: solid;
   width: 100px;
   background-color: rgb(57 98 230 / 18%);

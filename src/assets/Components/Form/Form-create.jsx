@@ -1,7 +1,7 @@
 import React from "react";
 import "./Form-create.css";
 import { useState } from "react";
-
+import data from "./../../../../public/data.json";
 function Form(props) {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -14,12 +14,11 @@ function Form(props) {
   const handleDescription = (e) => setDescription(e.currentTarget.value);
   const handlePrice = (e) => setPrice(e.currentTarget.value);
   const handleStocks = (e) => setStocks(e.currentTarget.value);
-  console.log(stocks);
 
   function handleSubmit(event) {
     event.preventDefault();
     const newProduct = {
-      id,
+      id: data.length + 1,
       title,
       description,
       price,
@@ -31,10 +30,10 @@ function Form(props) {
   return (
     <div className="formContainer">
       <form onSubmit={handleSubmit} className="formAdd">
-        <div className="input">
+        {/* <div className="input">
           <label htmlFor="id">id</label>
-          <input id="id" value={id} type="text" onChange={handleId} />
-        </div>
+          <input id="id" value={id} type="number" onChange={handleId} />
+        </div> */}
 
         <div className="input">
           <label htmlFor="title">title</label>

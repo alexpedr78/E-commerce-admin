@@ -5,6 +5,7 @@
 .NavBar {
   /* position: sticky;
   top: 1px; */
+  border-radius: 8px;
   color: beige;
   display: flex;
   height: 10rem;
@@ -19,7 +20,7 @@
     rgba(29, 200, 195, 1) 19%,
     rgba(0, 212, 255, 1) 100%
   );
-  border-radius: 8px;
+
   & h1 {
     align-self: center;
   }

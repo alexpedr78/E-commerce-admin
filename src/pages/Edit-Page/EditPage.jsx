@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { useParams, Navigate, useNavigate } from "react-router-dom";
 
 function EditPage(props) {
+  const navigate = useNavigate();
   const { id } = useParams();
   const existingProduct = props.product.find(
     (product) => product.id === Number(id)
   );
-  console.log(props.product);
+
   const [title, setTitle] = useState(existingProduct.title);
   const [description, setDescription] = useState(existingProduct.description);
   const [price, setPrice] = useState(existingProduct.price);
   const [stocks, setStocks] = useState(existingProduct.stock);
-  const [done, setDone] = useState(false);
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -24,11 +24,7 @@ function EditPage(props) {
       stocks: stocks,
     };
     props.handleEdit(editedProduct);
-    setDone(true);
-  }
-
-  if (done) {
-    return <Navigate to={"/"} />;
+    navigate("/");
   }
 
   function handleTitle(event) {

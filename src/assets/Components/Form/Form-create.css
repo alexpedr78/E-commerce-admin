@@ -1,12 +1,7 @@
 .formAdd {
   color: wheat;
-  background: rgb(2, 0, 36);
-  background: radial-gradient(
-    circle,
-    rgba(2, 0, 36, 0.493) 0%,
-    rgba(29, 120, 200, 0.4) 10%,
-    rgba(0, 213, 255, 0.53) 100%
-  );
+
+  background: green;
 
   align-items: center;
   display: flex;

@@ -14,7 +14,7 @@ import EditPage from "./pages/Edit-Page/EditPage";
 
 function App() {
   const [product, setProduct] = useState(Data);
-
+  const [originalProduct, setOriginal] = useState(Data);
   function handleDelete(id) {
     const filterArray = product.filter((oneProduct) => {
       return oneProduct.id !== id;
@@ -28,14 +28,25 @@ function App() {
     updatedProducts[index] = editedProduct;
     setProduct(updatedProducts);
   }
-  // useEffect(() => {
-  //   handleEdit(e);
-  //   handleDelete(e);
-  // }, []);
+
+  function handleSearch(event) {
+    let searchText = event.target.value;
+    if (searchText === "") {
+      setProduct(Data);
+    } else {
+      let newArr = product.filter((elem) =>
+        elem.title.toLowerCase().includes(searchText.toLowerCase())
+      );
+      setProduct(newArr);
+    }
+  }
+  // function handleClickCreate() {
+
+  // }
 
   return (
     <div className="main">
-      <div className="fullBody"> 
+      <div className="fullBody">
         <Navbar />
         <div className="centralPartOfTheScreen">
           <SideBar />
@@ -46,6 +57,8 @@ function App() {
                 path="/"
                 element={
                   <HomePage
+                    // handleClickCreate={handleClickCreate}
+                    handleSearch={handleSearch}
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
                     setProduct={setProduct}

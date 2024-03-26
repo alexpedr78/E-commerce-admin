@@ -31,7 +31,7 @@ function List(props) {
       </button>
 
       <Link to={`/Edit/${props.product.id}`}>
-        <button>Edit</button>
+        <button className="editButton">Edit</button>
       </Link>
     </article>
   );
