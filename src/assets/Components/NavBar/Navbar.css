@@ -24,4 +24,11 @@
   & h1 {
     align-self: center;
   }
+  .maryPg{
+    font-size: xx-large;
+    font-family: cursive;
+    background-color: #5f9ea0b0
+
+  }
+  
 }

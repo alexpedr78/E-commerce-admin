@@ -1,5 +1,6 @@
 .footer {
   border: solid 1px black;
-  height: 100px;
+  height: 40px;
   text-align: center;
+  margin-top: 16%;
 }

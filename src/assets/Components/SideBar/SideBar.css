@@ -7,13 +7,13 @@
   background-color: rgb(57 98 230 / 18%);
 }
 .Home {
-  background-color: aqua;
+  /* background-color: aqua; */
   border-radius: 8px;
   text-align: center;
 }
 .About {
   text-align: center;
-  background-color: rgb(236, 102, 12);
+  /* background-color: rgb(236, 102, 12); */
   border-radius: 8px;
 }
 .linkSide {
@@ -22,4 +22,12 @@
   gap: 3rem;
   position: sticky;
   top: 15rem;
+}
+.aboutUsImg{
+  width: 76%;
+  margin-bottom: -25%;
+}
+.homeImg{
+  width: 81%;
+  margin-bottom: -25%;
 }
