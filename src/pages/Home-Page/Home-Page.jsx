@@ -9,8 +9,9 @@ function HomePage(props) {
         <input
           className="inputSearch"
           type="text"
+          value={props.searchString}
           placeholder="search"
-          onChange={props.handleSearch}
+          onChange={(event) => props.setSearchString(event.target.value)}
         />
       </div>
       <div>{/* <button onClick={handleClickCreate}>create</button> */}</div>

@@ -5,7 +5,7 @@ function List(props) {
   return (
     <div className="listContainer">
       {props.product.map((product) => {
-        if (product.price > 500) {
+        if (product.price > 200) {
           return (
             <ListItem
               handleEdit={props.handleEdit}

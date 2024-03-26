@@ -16,7 +16,11 @@
   visibility: hidden;
 }
 .search {
-  margin: auto 0;
+  margin-left: 25%;
 }
 .inputSearch {
+  width: 70%;
+}
+p {
+  font-size: 2rem;
 }

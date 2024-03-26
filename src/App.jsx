@@ -13,8 +13,8 @@ import ItemDetailsPage from "./pages/Item-Details-Page/Item-Details-Page";
 import EditPage from "./pages/Edit-Page/EditPage";
 
 function App() {
-  const [product, setProduct] = useState(Data);
-  const [originalProduct, setOriginal] = useState(Data);
+  const [product, setProduct] = useState([...Data]);
+  const [searchString, setSearchString] = useState("");
   function handleDelete(id) {
     const filterArray = product.filter((oneProduct) => {
       return oneProduct.id !== id;
@@ -29,21 +29,9 @@ function App() {
     setProduct(updatedProducts);
   }
 
-  function handleSearch(event) {
-    let searchText = event.target.value;
-    if (searchText === "") {
-      setProduct(Data);
-    } else {
-      let newArr = product.filter((elem) =>
-        elem.title.toLowerCase().includes(searchText.toLowerCase())
-      );
-      setProduct(newArr);
-    }
-  }
-  // function handleClickCreate() {
-
-  // }
-
+  const productToDisplay = product.filter((oneProduct) =>
+    oneProduct.title.toLowerCase().includes(searchString.toLowerCase())
+  );
   return (
     <div className="main">
       <div className="fullBody">
@@ -58,11 +46,12 @@ function App() {
                 element={
                   <HomePage
                     // handleClickCreate={handleClickCreate}
-                    handleSearch={handleSearch}
+                    setSearchString={setSearchString}
+                    searchString={searchString}
                     handleEdit={handleEdit}
                     handleDelete={handleDelete}
                     setProduct={setProduct}
-                    product={product}
+                    product={productToDisplay}
                   />
                 }
               />
