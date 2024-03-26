@@ -5,7 +5,9 @@ function Navbar() {
   return (
     <nav className="NavBar">
       <img className="logo" src="/img/mary.png" alt="" />
-      <h1>Mary Poppin's bag</h1>
+      <h1>
+        <Link to={"/"}>Mary Poppin's bag</Link>
+      </h1>
       <img className="logo" src="/img/mary.png" alt="" />
     </nav>
   );

@@ -15,7 +15,9 @@ function HomePage(props) {
         />
       </div>
       <div>
-        <button onClick={() => props.showCreate()}>create</button>
+        <button onClick={() => props.showCreate()}>
+          {props.showCreateBanner ? "hide" : "create a new product"}
+        </button>
       </div>
       <div className="formContainer">
         {props.showCreateBanner ? <Form setProduct={props.setProduct} /> : null}
