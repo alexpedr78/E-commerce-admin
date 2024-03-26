@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import { useState } from "react";
-import { useEffect } from "react";
 import Navbar from "./assets/Components/NavBar/Navbar";
 import Footer from "./assets/Components/Footer/Footer";
 import SideBar from "./assets/Components/SideBar/SideBar";
@@ -13,6 +12,7 @@ import ItemDetailsPage from "./pages/Item-Details-Page/Item-Details-Page";
 import EditPage from "./pages/Edit-Page/EditPage";
 
 function App() {
+  const [showCreateBanner, setShowCreateBanner] = useState(false);
   const [product, setProduct] = useState([...Data]);
   const [searchString, setSearchString] = useState("");
   function handleDelete(id) {
@@ -27,6 +27,9 @@ function App() {
     const updatedProducts = [...product];
     updatedProducts[index] = editedProduct;
     setProduct(updatedProducts);
+  }
+  function showCreate() {
+    setShowCreateBanner(!showCreateBanner);
   }
 
   const productToDisplay = product.filter((oneProduct) =>
@@ -45,7 +48,9 @@ function App() {
                 path="/"
                 element={
                   <HomePage
-                    // handleClickCreate={handleClickCreate}
+                    setShowCreateBanner={setShowCreateBanner}
+                    showCreateBanner={showCreateBanner}
+                    showCreate={showCreate}
                     setSearchString={setSearchString}
                     searchString={searchString}
                     handleEdit={handleEdit}

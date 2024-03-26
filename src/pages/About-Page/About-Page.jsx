@@ -16,8 +16,10 @@ function AboutPage() {
           they can oppress Ouighour people
         </p>
         <p>Instead just make our website as your favorite and come shop here</p>
-        <p>100% of our revenues are used to create </p>
-        <a href="https://github.com/alexpedr78/E-commerce-admin.git">github</a>
+        <p>
+          100% of our revenues are used to create a new country for all people
+          where you could just be naked on the beach forever.
+        </p>
       </div>
     </div>
   );

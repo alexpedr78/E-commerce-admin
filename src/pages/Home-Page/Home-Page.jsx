@@ -10,13 +10,15 @@ function HomePage(props) {
           className="inputSearch"
           type="text"
           value={props.searchString}
-          placeholder="search"
+          placeholder="Search by Title"
           onChange={(event) => props.setSearchString(event.target.value)}
         />
       </div>
-      <div>{/* <button onClick={handleClickCreate}>create</button> */}</div>
-      <div className="formContainer" id="hidden">
-        <Form setProduct={props.setProduct} />
+      <div>
+        <button onClick={() => props.showCreate()}>create</button>
+      </div>
+      <div className="formContainer">
+        {props.showCreateBanner ? <Form setProduct={props.setProduct} /> : null}
       </div>
       <List
         handleEdit={props.handleEdit}
