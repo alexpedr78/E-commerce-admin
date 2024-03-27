@@ -4,9 +4,7 @@ import { useParams, Navigate, useNavigate } from "react-router-dom";
 function EditPage(props) {
   const navigate = useNavigate();
   const { id } = useParams();
-  const existingProduct = props.product.find(
-    (product) => product.id === Number(id)
-  );
+  const existingProduct = props.product.find((product) => product.id === id);
 
   const [title, setTitle] = useState(existingProduct.title);
   const [description, setDescription] = useState(existingProduct.description);
@@ -17,7 +15,7 @@ function EditPage(props) {
     event.preventDefault();
 
     const editedProduct = {
-      id: Number(id),
+      id: id,
       title: title,
       description: description,
       price: price,

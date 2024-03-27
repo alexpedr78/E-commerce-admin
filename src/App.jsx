@@ -15,6 +15,7 @@ function App() {
   const [showCreateBanner, setShowCreateBanner] = useState(false);
   const [product, setProduct] = useState([...Data]);
   const [searchString, setSearchString] = useState("");
+  const [selectValue, setSelectValue] = useState("-1");
   function handleDelete(id) {
     const filterArray = product.filter((oneProduct) => {
       return oneProduct.id !== id;
@@ -32,9 +33,23 @@ function App() {
     setShowCreateBanner(!showCreateBanner);
   }
 
-  const productToDisplay = product.filter((oneProduct) =>
-    oneProduct.title.toLowerCase().includes(searchString.toLowerCase())
-  );
+  const productToDisplay = product.filter((oneProduct) => {
+    console.log(
+      selectValue === oneProduct.category,
+      oneProduct.title.toLowerCase().includes(searchString.toLowerCase())
+    );
+    if (selectValue === "-1") {
+      return oneProduct.title
+        .toLowerCase()
+        .includes(searchString.toLowerCase());
+    } else {
+      return (
+        oneProduct.title.toLowerCase().includes(searchString.toLowerCase()) &&
+        oneProduct.category === selectValue
+      );
+    }
+  });
+  console.log(productToDisplay);
   return (
     <div className="main">
       <div className="fullBody">
@@ -48,6 +63,8 @@ function App() {
                 path="/"
                 element={
                   <HomePage
+                    selectValue={selectValue}
+                    setSelectValue={setSelectValue}
                     setShowCreateBanner={setShowCreateBanner}
                     showCreateBanner={showCreateBanner}
                     showCreate={showCreate}

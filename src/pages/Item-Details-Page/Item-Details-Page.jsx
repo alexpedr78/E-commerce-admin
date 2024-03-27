@@ -4,7 +4,7 @@ import "./Item-Details-Page.css";
 function ItemDetailsPage({ product }) {
   const { id } = useParams();
 
-  const itemsdetails = product.find((items) => items.id === Number(id));
+  const itemsdetails = product.find((items) => items.id === id);
   console.log(product, itemsdetails);
 
   return (

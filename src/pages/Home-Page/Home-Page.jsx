@@ -15,6 +15,19 @@ function HomePage(props) {
         />
       </div>
       <div>
+        <select
+          onChange={(event) => props.setSelectValue(event.target.value)}
+          value={props.selectValue}
+          name=""
+          id=""
+        >
+          <option disabled value="-1">
+            select category
+          </option>
+          <option value="skincare">Skincare</option>
+        </select>
+      </div>
+      <div>
         <button onClick={() => props.showCreate()}>
           {props.showCreateBanner ? "hide" : "create a new product"}
         </button>

@@ -18,7 +18,7 @@ function Form(props) {
   function handleSubmit(event) {
     event.preventDefault();
     const newProduct = {
-      id: data.length + 1,
+      id: crypto.randomUUID(),
       title,
       description,
       price,
