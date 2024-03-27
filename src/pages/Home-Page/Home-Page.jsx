@@ -24,7 +24,10 @@ function HomePage(props) {
           <option disabled value="-1">
             select category
           </option>
+          <option value="all">All</option>
           <option value="skincare">Skincare</option>
+          <option value="fragrances">Fragrances</option>
+          <option value="laptops">Laptops</option>
         </select>
       </div>
       <div>

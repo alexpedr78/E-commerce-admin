@@ -34,11 +34,7 @@ function App() {
   }
 
   const productToDisplay = product.filter((oneProduct) => {
-    console.log(
-      selectValue === oneProduct.category,
-      oneProduct.title.toLowerCase().includes(searchString.toLowerCase())
-    );
-    if (selectValue === "-1") {
+    if (selectValue === "-1" || selectValue === "all") {
       return oneProduct.title
         .toLowerCase()
         .includes(searchString.toLowerCase());
